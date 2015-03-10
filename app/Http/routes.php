@@ -11,3 +11,17 @@
 |
 */
 
+// Resource Controllers
+
+Route::resource('meme', 'MemeResource');
+Route::get('meme/search', ['uses' => 'MemeResource@search']);
+Route::resource('tag', 'TagResource');
+Route::resource('generated', 'GeneratedMemeResource');
+Route::get('generated/view/{id}', ['uses' => 'GeneratedMemeResource@display']);
+Route::get('generated/delete-old/{minutes}', ['uses' => 'GeneratedMemeResource@destroyOldMemes']);
+
+// Pages
+
+Route::get('/', ['uses' => 'PageController@generator']);
+Route::get('view', ['uses' => 'PageController@viewer']);
+Route::get('manage', ['uses' => 'PageController@manage']);
