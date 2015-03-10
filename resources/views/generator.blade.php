@@ -145,14 +145,12 @@
 @section('page-js')
     <script type="text/javascript" src="{{ URL::asset('js/plugins/konami/konami.min.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/meme-object.js') }}"></script>
-    <script type="text/javascript" src="{{ URL::asset('js/fakesite.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/viewer.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/generator.js') }}"></script>
 @stop
 
 @section('onload')
     $('#meme-nav-generator').addClass('active');
-    //fakesite.init();
     viewer.init();
     generator.init();
 @stop
