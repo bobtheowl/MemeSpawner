@@ -1,0 +1,9 @@
+###############################################################################
+# Example cron job for automatically clearing out old generated memes.
+#
+# The number argument passed to generated/delete-old is how old the generated
+# memes have to be (in minutes) before they are deleted. The example as shown
+# will delete all memes which were generated more than 15 minutes ago.
+###############################################################################
+
+*/5 * * * * root curl --insecure https://localhost/[APP ROOT]/public/index.php/generated/delete-old/15 >/dev/null 2>&1
